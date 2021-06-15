@@ -17,13 +17,13 @@ steps:
   inputs:
     #versionSpec: '8' 
     jdkArchitectureOption: 'x64' # Options: x64, x86
-    jdkSourceOption: 'LocalDirectory' # Options: AzureStorage, LocalDirectory
+    jdkSourceOption: 'AzureStorage' # Options: AzureStorage, LocalDirectory
     #jdkFile: # Required when jdkSourceOption == LocalDirectory
     #azureResourceManagerEndpoint: # Required when jdkSourceOption == AzureStorage
     #azureStorageAccountName: # Required when jdkSourceOption == AzureStorage
     #azureContainerName: # Required when jdkSourceOption == AzureStorage
     #azureCommonVirtualFile: # Required when jdkSourceOption == AzureStorage
-    jdkDestinationDirectory: '/usr/lib/jvm/java-8-openjdk-amd64/jre'
+    #jdkDestinationDirectory: '/usr/lib/jvm/java-8-openjdk-amd64/jre'
     #cleanDestinationDirectory: true
 - task: Maven@3
   inputs:
