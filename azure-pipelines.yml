@@ -23,8 +23,8 @@ steps:
     #azureStorageAccountName: # Required when jdkSourceOption == AzureStorage
     #azureContainerName: # Required when jdkSourceOption == AzureStorage
     #azureCommonVirtualFile: # Required when jdkSourceOption == AzureStorage
-    jdkDestinationDirectory: '/home/akhil/myagent/_work/_temp/'
-    #cleanDestinationDirectory: true
+    jdkDestinationDirectory: '/home/akhil/builds/binaries/externals'
+    cleanDestinationDirectory: true
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
