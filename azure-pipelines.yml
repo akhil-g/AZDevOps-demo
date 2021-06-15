@@ -13,11 +13,11 @@ pool:
 steps:
 # Java tool installer
 # Acquire a specific version of Java from a user-supplied Azure blob or the tool cache and sets JAVA_HOME
-- task: JavaToolInstaller@0
-  inputs:
+#- task: JavaToolInstaller@0
+  #inputs:
     #versionSpec: '8' 
-    jdkArchitectureOption: 'x64' # Options: x64, x86
-    jdkSourceOption: 'AzureStorage' # Options: AzureStorage, LocalDirectory
+    #jdkArchitectureOption: 'x64' # Options: x64, x86
+    #jdkSourceOption: 'LocalDirectory' # Options: AzureStorage, LocalDirectory
     #jdkFile: # Required when jdkSourceOption == LocalDirectory
     #azureResourceManagerEndpoint: # Required when jdkSourceOption == AzureStorage
     #azureStorageAccountName: # Required when jdkSourceOption == AzureStorage
