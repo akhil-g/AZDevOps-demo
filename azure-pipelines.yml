@@ -11,18 +11,12 @@ pool:
   name: default
 
 steps:
-# Java tool installer
-# Acquire a specific version of Java from a user-supplied Azure blob or the tool cache and sets JAVA_HOME
 - task: JavaToolInstaller@0
   inputs:
     versionSpec: '8' 
     jdkArchitectureOption: 'x64' # Options: x64, x86
     jdkSourceOption: 'LocalDirectory' # Options: AzureStorage, LocalDirectory
-    jdkFile: '/home/akhil/openlogic-openjdk-8u292-b10-linux-x64.tar.gz' # Required when jdkSourceOption == LocalDirectory
-    #azureResourceManagerEndpoint: # Required when jdkSourceOption == AzureStorage
-    #azureStorageAccountName: # Required when jdkSourceOption == AzureStorage
-    #azureContainerName: # Required when jdkSourceOption == AzureStorage
-    #azureCommonVirtualFile: # Required when jdkSourceOption == AzureStorage
+    jdkFile: '/home/akhil/openlogic-openjdk-8u292-b10-linux-x64.tar.gz'
     jdkDestinationDirectory: '/home/akhil/builds/binaries/externals'
     cleanDestinationDirectory: true
 - task: Maven@3
@@ -35,3 +29,12 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+- task: CopyFiles@2
+  inputs:
+    Contents: '**/*.war'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'AZwebapp'
+    publishLocation: 'Container'
