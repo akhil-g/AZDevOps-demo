@@ -18,7 +18,7 @@ steps:
     versionSpec: '8' 
     jdkArchitectureOption: 'x64' # Options: x64, x86
     jdkSourceOption: 'LocalDirectory' # Options: AzureStorage, LocalDirectory
-    jdkFile: '/usr/lib/jvm/java-8-openjdk-amd64/jre/bin' # Required when jdkSourceOption == LocalDirectory
+    jdkFile: '/usr/lib/jvm/java-8-openjdk-amd64/' # Required when jdkSourceOption == LocalDirectory
     #azureResourceManagerEndpoint: # Required when jdkSourceOption == AzureStorage
     #azureStorageAccountName: # Required when jdkSourceOption == AzureStorage
     #azureContainerName: # Required when jdkSourceOption == AzureStorage
