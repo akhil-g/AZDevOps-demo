@@ -52,3 +52,9 @@ steps:
     WebAppName: 'az-demowebapp'
     AppInsightsResourceGroupName: 'az-webapp'
     ApplicationInsightsResourceName: 'az-demowebapp'
+- task: AzureMonitor@1
+  inputs:
+    connectedServiceNameARM: 'Free Trial (b3d4dc4d-2962-461e-a366-b47c872410f5)'
+    ResourceGroupName: 'az-webapp'
+    filterType: 'resource'
+    resource: 'Microsoft.Web/sites/az-demowebapp'
