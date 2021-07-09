@@ -51,4 +51,4 @@ steps:
     Action: 'Enable Continuous Monitoring'
     WebAppName: 'az-demowebapp'
     AppInsightsResourceGroupName: 'az-webapp'
-    ApplicationInsightsResourceName: 'appinsights'
+    ApplicationInsightsResourceName: 'az-demowebapp'
