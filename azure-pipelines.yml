@@ -43,12 +43,12 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'Free Trial (b3d4dc4d-2962-461e-a366-b47c872410f5)'
     appType: 'webAppLinux'
-    WebAppName: 'demowebapp'
+    WebAppName: 'az-demowebapp'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
 - task: AzureAppServiceManage@0
   inputs:
     azureSubscription: 'Free Trial (b3d4dc4d-2962-461e-a366-b47c872410f5)'
     Action: 'Enable Continuous Monitoring'
-    WebAppName: 'demowebapp'
+    WebAppName: 'az-demowebapp'
     AppInsightsResourceGroupName: 'az-webapp'
-    ApplicationInsightsResourceName: 'demoappinsights'
+    ApplicationInsightsResourceName: 'appinsights'
