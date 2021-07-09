@@ -38,3 +38,17 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'AZwebapp'
     publishLocation: 'Container'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial (b3d4dc4d-2962-461e-a366-b47c872410f5)'
+    appType: 'webAppLinux'
+    WebAppName: 'demowebapp'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
+- task: AzureAppServiceManage@0
+  inputs:
+    azureSubscription: 'Free Trial (b3d4dc4d-2962-461e-a366-b47c872410f5)'
+    Action: 'Enable Continuous Monitoring'
+    WebAppName: 'demowebapp'
+    AppInsightsResourceGroupName: 'az-webapp'
+    ApplicationInsightsResourceName: 'demoappinsights'
